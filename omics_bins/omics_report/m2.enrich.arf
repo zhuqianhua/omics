@@ -1,0 +1,29 @@
+@title
+number = 功能富集分析
+功能富集分析
+
+@paragraph
+Gene Ontology（简称GO）是一个国际标准化的基因功能分类体系，提供了一套动态更新的标准词汇表（controlled vocabulary）来全面描述生物体中基因和基因产物的属性。GO总共有三个ontology（本体），分别描述基因的分子功能（molecular function）、细胞成分（cellular component）、参与的生物过程（biological process）。GO的基本单位是term（词条、节点），每个term都对应一个属性。
+
+@paragraph
+GO功能显著性富集分析给出与基因组背景相比，模块内基因或模块间交集基因显著富集的GO功能条目，从而给出这些基因与哪些生物学功能显著相关。该分析首先把模块内基因或模块间交集基因向Gene Ontology数据库（\url{http://www.geneontology.org/}）的各个term映射，计算每个term的基因数目，然后应用超几何检验，找出与整个基因组背景相比，模块内基因或模块间交集基因显著富集的GO条目。参照软件‘GO::TermFinder’（\url{http://www.yeastgenome.org/help/analyze/go-term-finder}），我们开发出严格的算法来做此项分析，其公式如下：
+
+@figure
+file = <url = resource/hypergeometric.jpg>
+
+@paragraph
+其中，N为所有基因中具有GO注释的基因数目；n为N中模块内基因或模块间交集基因的数目；M为所有基因中注释为某特定GO term的基因数目；m为注释为某特定GO term的模块内基因或模块间交集基因的数目。计算得到的p-value通过Bonferroni \reference{bonferroni_ref}校正之后，以corrected p-value≤0.05为阈值，满足此条件的GO term定义为在模块内基因或模块间交集基因中显著富集的GO term。
+
+@reference
+number = bonferroni_ref
+text = "Abdi, H. (2007). " The bonferroni and Sidak corrections for multiple comparisons. " In N.J. Salkind ( ed.). Encyclopedia of Measurement and Statistics. Thousand Oaks, CA: Sage."
+url = http://www.utdallas.edu/~herve/Abdi-Bonferroni2007-pretty.pdf
+
+@paragraph
+基于Pathway的分析有助于更进一步了解基因的生物学功能。KEGG\reference{KEGG_ref}是有关Pathway的主要公共数据库，Pathway显著性富集分析以KEGG Pathway为单位，应用超几何检验，找出与整个基因组背景相比，模块内基因或模块间交集基因显著性富集的Pathway。该分析的计算公式同GO功能显著性富集分析，在这里N为所有基因中具有Pathway注释的基因数目；n为N中模块内基因或模块间交集基因的数目；M为所有基因中注释为某特定Pathway的基因数目；m为注释为某特定Pathway的模块内基因或模块间交集基因的数目。Qvalue≤0.05的Pathway定义为在模块内基因或模块间交集基因显著富集的Pathway。通过Pathway显著性富集能确定模块内基因或模块间交集基因参与的最主要生化代谢途径和信号转导途径。
+
+@reference
+number = KEGG_ref
+text = "Kanehisa, M., et al. (2008). KEGG for linking genomes to life and the environment. Nucleic Acids Res, 36 (Database issue): D480-4."
+url = http://www.ncbi.nlm.nih.gov/pubmed/18077471
+

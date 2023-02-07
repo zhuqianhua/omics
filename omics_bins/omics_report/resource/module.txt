@@ -1,0 +1,3 @@
+Field	Description
+第一列	基因名称
+剩余列	样品名称

@@ -1,0 +1,6 @@
+@title
+number = 互作网络结果说明
+互作网络结果说明
+
+@paragraph
+互作网络图的结果可以通过打开\textit{*.html}查看，结果目录下的\textit{*.pdf}文件为互作网络的PDF格式图片，目录\textit{*_files}为网页显示时需要的配置文件，如果不需要修改核心内容，可以忽略。

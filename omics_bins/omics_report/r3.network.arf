@@ -1,0 +1,20 @@
+@title
+显著相关的模块间的互作网络图
+@paragraph
+基于不同组学指标数据之间的关系，针对显著相关的模块组合，利用Visnetwork\reference{ref_net}构建其互作网络图，具体的方法描述可以参考方法页面\title{互作网络图}，互作网络图的结果见图\figure{fig_net}。
+
+@figure
+number = fig_net
+title = "互作网络图"
+ARZ1
+desc = "图中不同的形状对应不同的组学，颜色的深浅对应相应的表达量的高与低，颜色越深，表达值越高。"
+
+@paragraph
+互作网络图的动态图如下表所示，结果文件说明可以参考帮助页面\title{互作网络结果说明}。这里只列举了部分结果，全部的结果可以参考结果目录\textit{04.Network/*/*.html}。
+ARZ2
+
+@reference
+number = ref_net
+text = "Almende B.V. and Benoit Thieurmel (2016). visNetwork: Network Visualization using 'vis.js' Library"
+url = http://CRAN.R-project.org/package=visNetwork
+

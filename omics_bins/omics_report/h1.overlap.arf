@@ -1,0 +1,33 @@
+format = arf1.0
+language = CN
+
+%help
+
+@title
+number = 模块列表格式说明
+模块列表格式说明
+@paragraph
+每个组学的模块结果分别在\textit{01.Expression_pattern/*/*M*.txt}，具体的结果格式见表\table{tab_mdes}。
+
+@table
+number = tab_mdes
+title = "模块列表格式"
+file = <url = resource/module.txt>
+format = <field = 1; type = string>
+format = <field = 2; type = string>
+view = -1
+
+@title
+number = 显著相关模块集列表格式说明
+显著相关模块集列表格式说明
+@paragraph
+显著相关模块集列表见表\table{tab_etb}。
+
+@table
+number = tab_etb
+title = "显著相关模块集列表格式"
+file = <url = resource/intermodule.txt>
+format = <field = 1; type = string>
+format = <field = 2; type = string>
+view = -1
+

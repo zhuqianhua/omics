@@ -1,0 +1,63 @@
+format = arf1.0
+language = CN
+
+%result
+
+@title
+项目概述
+
+@paragraph
+在项目编号为\textit{\textbf{ARZ1}}的项目中，共涉及ARZ2个组学的高通量测序数据，分别为：ARZ3。为研究不同组学数据间相互关联关系，是否存在共表达及调控机制，本次研究首先采用\textit{\textbf{WGCNA}}\reference{ref_wgcna}对单一组学的数据构建共表达网络，分别筛选出：ARZ4个表达聚类模块，然后基于不同组学数据之间的关联关系，计算不同组学的模块之间的重叠关系，得到ARZ5种显著相关的模块组合，并对每个模块及模块组合进行深入功能分析，以供解释生物学现象。
+
+@title
+表达模块
+@paragraph
+基于单一组学数据的相关性，构建其共表达网络，具体的方法描述可以参考方法页面\title{构建共表达网络}。每个组学指标数据(如mRNA、miRNA)的无尺度网络分模块结果见图 \figure{fig_modc}；用每个组学各模块表达量矩阵的特征值数据来体现模块之间的关系见图 \figure{fig_eigc}，特征值数据的表达热图见图 \figure{fig_eigh}。
+
+@figure
+number = fig_modc
+title = "共表达模块"
+ARZ6
+desc = "横坐标上的Module colours，不同的颜色代表不同的模块；聚类树上的每一条线分别对应一个基因。"
+
+@figure
+number = fig_eigc
+title = "模块聚类图"
+ARZ7
+desc = "图中不同的颜色分别代表不同的模块，根据每个模块的特征基因进行层次聚类，得到所有模块之间的关系图。"
+
+
+@figure
+number = fig_eigh
+title = "模块相关性热图"
+ARZ8
+desc = "根据每个模块的特征基因，计算所有模块之间的相关性系数，构建模块之间的相关性热图。"
+
+@paragraph
+每个模块对应的指标数据的具体结果可以参考如下列表，文件格式说明可以参考帮助页面\title{模块列表格式说明}。由于每个组学涉及的模块数会比较多，这里只列举了部分结果，全部的模块结果可以参考分析目录\textit{01.Expression_pattern/*/*M*.txt}，文件命名为：组学名M模块名.xls（模块名以颜色表示）。
+
+ARZ9
+
+@title
+显著相关的模块集
+@paragraph
+利用超几何模型\reference{ref_hyper}，计算模块之间相互关联的显著性(P-value<=0.05为显著相关模块对)，具体的方法描述看参考方法页面\title{筛选显著相关的模块}。筛选出的显著相关的模块组合见表\table{tab_over}，格式说明参考帮助页面\title{显著相关模块集列表格式说明}，表中模块集的命名方式为：组学名M模块名_另一组学名M另一模块名.xls。
+
+@table
+number = tab_over
+title = "显著相关的模块集"
+file = <url = ARZ0>
+format = <field = 1; type = string; desc = "显著相关的模块的名称，下划线分隔">
+format = <field = 2; type = scientific; desc = "显著性P值">
+format = <field = 3; type = int; desc = "模块间交集的基因数">
+footnote = "如果显著相关的模块组合比较多时，只显示前20行，全部的结果可以查看\textit{02.Module_overlap/*.xls}。"
+
+@reference
+number = ref_wgcna
+text = "Peter Langfelder and Steve Horvath. WGCNA: an R package for weighted correlation network analysis. BMC Bioinformatics20089:559"
+url = https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-559
+
+@reference
+number = ref_hyper
+text = "Johnson, N. L., Kotz, S., and Kemp, A. W. (1992) Univariate Discrete Distributions, Second Edition. New York: Wiley."
+url = http://as.wiley.com/WileyCDA/WileyTitle/productCd-0471584940.html

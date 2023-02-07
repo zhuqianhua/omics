@@ -1,0 +1,8 @@
+Field	Description
+*ID	条目ID
+Pvalue	显著性P值
+OddsRatio	条目的优势比	
+ExpCount	目标基因集中注释到该条目的期望的基因数
+Count	目标基因集中注释到该条目的基因数
+Size	该条目包含的基因数
+Term	具体的条目名称

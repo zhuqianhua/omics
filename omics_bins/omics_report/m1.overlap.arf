@@ -1,0 +1,28 @@
+format = arf1.0
+language = CN
+
+%method
+
+@title
+number = 构建共表达网络
+构建共表达网络
+@paragraph
+基于Pearson\reference{ref_cor}相关性系数构建共表达网络。为了让构建的网络趋于无尺度网络（对某节点k的连接数的对数log(k)和该节点出现的概率的对数log(p(k))建立模型，log(k)与log(p(k))的相关性系数的平方值越大时，该网络越逼近无尺度网络的分布），选择合适的β阈值是至关重要的。基于设定的阈值，计算相关性系数矩阵的邻接矩阵，再根据混合动态剪切树，确定分类模块。
+
+@title
+number = 筛选显著相关的模块
+筛选显著相关的模块
+@paragraph
+假定其中一个模块包含的指标数量为M，该模块与其他模块交集的指标数量为m，其他模块并集的指标数量为n，分析时输入的所有的指标数量为N，则对应的显著性P值为：
+@figure
+file = <url = resource/hyper.png>
+size = <width = 300; height = 100>
+\verbatim
+如果检验的P值小于等于0.05且模块交集的基因数大于等于10，则认为该模块组合是显著相关的。
+\end
+
+@reference
+number = ref_cor
+text = "Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole."
+url = https://www.immagic.com/eLibrary/ARCHIVES/GENERAL/WIKIPEDI/W120512S.pdf
+

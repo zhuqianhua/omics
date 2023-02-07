@@ -1,0 +1,14 @@
+@title
+number = 富集结果文件说明
+富集结果文件说明
+@paragraph
+对目标基因集进行功能富集分析，其中文件名中后缀BP、CC、MF、KEGG分别对应分子功能（molecular function）、细胞成分（cellular component）、参与的生物过程（biological process）、Pathway，具体的结果格式见表\table{tab_edes}。
+
+@table
+number = tab_edes
+title = "富集结果说明"
+file = <url = resource/enrich.txt>
+format = <field = 1; type = string>
+format = <field = 2; type = string>
+view = -1
+

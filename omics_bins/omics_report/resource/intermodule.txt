@@ -1,0 +1,4 @@
+Field	Description
+Module name	显著相关的模块的名称，下划线分隔
+P-value	显著性P值
+Inter count	模块间交集的基因数

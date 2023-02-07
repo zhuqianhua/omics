@@ -1,0 +1,58 @@
+@title
+富集分析
+@paragraph
+为了进一步分析模块内和模块组合基因的功能，对模块内或模块组合的基因集进行富集分析。通过计算每个模块或每个模块组合的基因集在基因本体注释数据库（Gene Ontology，GO\reference{ref_go}）或者代谢通路数据库（如KEGG\reference{ref_kegg}，该分析限定一些物种）中各条目的富集程度，再根据假设检验的p值来衡量富集到模块内或模块组合上的功能的显著性，具体的方法描述可以参考方法页面\title{功能富集分析}。
+
+@subtitle
+模块内基因的功能富集分析
+@paragraph
+对共表达网络筛选的模块构建表达热图，见图\figure{fig_mpht}。
+
+@figure
+number = fig_mpht
+title = "模块表达趋势图"
+ARZ1
+desc = "每一行对应一个模块的一个指标数据（如mRNA、miRNA），每一列对应一个样品。颜色的深浅变化对应着表达值的高与低，越红表明对应的表达量越高，越蓝则越低。"
+
+@paragraph
+对各模块进行功能富集分析，结果如下表所示，结果文件的格式说明可以参考帮助页面\title{富集结果文件说明}。由于富集的结果比较多，这里只列举了部分结果，全部的结果可以参考结果目录\textit{03.Enrichment_pattern/*.xls}，文件命名为：组学名M模块名_功能类别.xls。
+ARZ2
+
+@paragraph
+对于显著富集的条目，其基因的表达趋势见图\figure{fig_tpht}。
+@figure
+number = fig_tpht
+title = "富集条目上基因的表达趋势"
+ARZ3
+desc = "每个富集的条目对应一张热图，每一列为对应的样品，每一行为相应的基因。颜色越深，代表对应的表达值越高。"
+
+@subtitle
+模块间交集基因的功能富集分析
+@paragraph
+对显著相关模块的交集基因进行功能富集分析，其表达趋势和富集的条目见图\figure{fig_eovr}。
+@figure
+number = fig_eovr
+title = "交集基因的富集结果"
+ARZ4
+desc = "左边为每个组学每个模块与其他组学每个模块交集部分数据的表达趋势图，每一个图对应一个组学的一个模块，横坐标为样品的名称；右边部分为富集的功能条目，其中柱子的长短对应基因的数量，颜色的深浅代表显著富集的p值的大小，值越小颜色越深。"
+
+@paragraph
+显著相关的模块，分别进行GO条目富集分析，GO条目的交集统计结果见图\figure{fig_evnn}。模块间交集基因的功能富集结果如下表所示，结果文件的格式说明可以参考帮助页面\title{富集结果文件说明}。由于富集的结果比较多，这里只列举了部分结果，全部的结果可以参考结果目录\textit{03.Enrichment_overlap/*.xls}，文件命名为：组学名M模块名_另一组学名M另一模块名_功能类别.xls。
+@figure
+number = fig_evnn
+title = "显著相关模块的功能统计图"
+ARZ5
+desc = "对显著相关的模块，分别进行富集分析，然后统计不同模块在功能层面的交并集情况。"
+
+ARZ6
+
+@reference
+number = ref_kegg
+text = "Kanehisa, M., et al. (2008). KEGG for linking genomes to life and the environment. Nucleic Acids Res, 36 (Database issue): D480-4."
+url = http://www.ncbi.nlm.nih.gov/pubmed/18077471/
+
+@reference
+number = ref_go
+text = "The Gene Ontology Consortium is supported by a P41 grant from the National Human Genome Research Institute (NHGRI)"
+url = https://projectreporter.nih.gov/project_info_description.cfm?aid=8641714&icde=0
+
